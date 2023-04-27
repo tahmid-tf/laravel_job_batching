@@ -1,0 +1,12 @@
+https://stackoverflow.com/questions/75285913/badmethodcallexception-method-illuminate-foundation-applicationshare-does-not
+
+
+Go to composer.json
+Update "maatwebsite/excel": "3.1.48",
+Run composer update
+Go to config->app.php
+Add to providers Maatwebsite\Excel\ExcelServiceProvider::class,
+Add to aliases 'Excel' =>Maatwebsite\Excel\Facades\Excel::class,
+Run composer dump-autoload
+
+php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
